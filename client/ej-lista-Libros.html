@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Libros!!!</title>
+  </head>
+
+  <body>
+    <a href=""> <h2>Volver al index</h2> </a>
+    <h1>Libros</h1>
+    <p>Libros de grandes autores</p>
+    <table>
+      <thead>
+        <td>Título</td>
+        <td>Autor</td>
+        <td>Genero</td>
+        <td>Año</td>
+      </thead>
+
+      <thead>
+        <td><p id="titulo" /></td>
+        <td><p id="autor" /></td>
+        <td><p id="genero" /></td>
+        <td><p id="anio" /></td>
+      </thead>
+      <thead>
+        <td colspan="4">
+          <button type="button" id="btnAutorLibros">
+            Autor con mas documentos
+          </button>
+          <button type="button" id="btnLibrosViejos">
+            Cantidad de libros con mas de un año de antiguedad
+          </button>
+          <button type="button" id="btnLibrosGenero">
+            Listar libros de un genero
+          </button>
+          <button type="button" id="btnModerno">Libros mas moderno</button>
+          <button type="button" id="btnAntiguo">Libros mas antiguo</button>
+          <button type="button" id="btnGeneroMasEscrito">
+            Genero con mas libros
+          </button>
+        </td>
+      </thead>
+
+      <tbody id="tblPistas"></tbody>
+    </table>
+    <div id="total"></div>
+    <script type="module" src="scripts/listar-libros.js"></script>
+  </body>
+</html>
