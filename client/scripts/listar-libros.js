@@ -157,4 +157,96 @@ const listaDeLibros = [
   },
 ];
 
+const cargarLibros = () => {
+  let contenedor = document.getElementById('tblLibros');
+  let tabla = '';
+
+  listaDeLibros.forEach((libro) => {
+    tabla += `<tr>
+    <td>${libro.titulo}</td>
+    <td>${libro.autor}</td>
+    <td>${libro.genero}</td>
+    <td>${libro.año}</td>
+    </tr>
+    `;
+  });
+
+  contenedor.innerHTML = tabla;
+};
+
 console.log(listaDeLibros);
+cargarLibros();
+
+let btnAutorLibros = document.getElementById('btnAutorLibros');
+let btnLibrosViejos = document.getElementById('btnLibrosViejos');
+let btnLibrosGenero = document.getElementById('btnLibrosGenero');
+let btnModerno = document.getElementById('btnModerno');
+let btnAntiguo = document.getElementById('btnAntiguo');
+let btnGeneroMasEscrito = document.getElementById('btnGeneroMasEscrito');
+
+const autorLibros = () => {
+  alert('puto el que lee');
+};
+btnAutorLibros.addEventListener('click', autorLibros);
+
+const librosViejos = () => {
+  alert('puto el que lee');
+};
+btnLibrosViejos.addEventListener('click', librosViejos);
+
+const librosGenero = () => {
+  let genero = prompt('Ingrese el genero y le listaremos los libros que haya');
+  let lista = '';
+
+  listaDeLibros.forEach((libro) => {
+    if (libro.genero.toUpperCase === genero.toUpperCase) {
+      lista += libro.titulo + ' de ' + libro.autor + ' del ' + libro.año + '\n';
+    }
+  });
+
+  lista === ''
+    ? alert('No hay ningun libro de ' + genero)
+    : alert('Libros de ' + genero + '\n' + lista);
+};
+btnLibrosGenero.addEventListener('click', librosGenero);
+
+const moderno = () => {
+  let masModerno = listaDeLibros[0];
+  listaDeLibros.forEach((libro) => {
+    if (libro.año > masModerno.año) {
+      masModerno = libro;
+    }
+  });
+  alert(
+    'El libro mas moderno es ' +
+      masModerno.titulo +
+      ' de ' +
+      masModerno.autor +
+      ' del año ' +
+      masModerno.año,
+  );
+};
+btnModerno.addEventListener('click', moderno);
+
+const antiguo = () => {
+  let masAntiguo = listaDeLibros[0];
+  listaDeLibros.forEach((libro) => {
+    if (libro.año < masAntiguo.año) {
+      masAntiguo = libro;
+    }
+  });
+  alert(
+    'El libro mas antiguo es ' +
+      masAntiguo.titulo +
+      ' de ' +
+      masAntiguo.autor +
+      ' del año ' +
+      masAntiguo.año,
+  );
+};
+btnAntiguo.addEventListener('click', antiguo);
+
+const generoMasEscrito = () => {
+  let genero = prompt('Ingrese el ');
+};
+btnGeneroMasEscrito.addEventListener('click', generoMasEscrito);
