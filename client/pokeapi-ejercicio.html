@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api de pokemon</title>
+  </head>
+
+  <body>
+    <a href="index.html"> <h2>Volver al index</h2> </a>
+    <h1>Pokemones</h1>
+
+    <table>
+      <thead colspan="4">
+        <td>Título</td>
+        <td>Autor</td>
+        <td>Genero</td>
+        <td>Año</td>
+      </thead>
+
+      <thead>
+        <td><p id="titulo" /></td>
+        <td><p id="autor" /></td>
+        <td><p id="genero" /></td>
+        <td><p id="anio" /></td>
+      </thead>
+
+      <tbody id="tblPokemons"></tbody>
+    </table>
+    <div id="total"></div>
+    <script type="module" src="scripts/poke-api.js"></script>
+  </body>
+</html>
