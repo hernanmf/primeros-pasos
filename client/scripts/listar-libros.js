@@ -1,4 +1,4 @@
-const listaDeLibros = [
+let listaDeLibros = [
   {
     titulo: 'Cien años de soledad',
     autor: 'Gabriel García Márquez',
@@ -157,8 +157,9 @@ const listaDeLibros = [
   },
 ];
 
+const d = document;
 const cargarLibros = () => {
-  let contenedor = document.getElementById('tblLibros');
+  let contenedor = d.getElementById('tblLibros');
   let tabla = '';
 
   listaDeLibros.forEach((libro) => {
@@ -177,12 +178,35 @@ const cargarLibros = () => {
 console.log(listaDeLibros);
 cargarLibros();
 
-let btnAutorLibros = document.getElementById('btnAutorLibros');
-let btnLibrosViejos = document.getElementById('btnLibrosViejos');
-let btnLibrosGenero = document.getElementById('btnLibrosGenero');
-let btnModerno = document.getElementById('btnModerno');
-let btnAntiguo = document.getElementById('btnAntiguo');
-let btnGeneroMasEscrito = document.getElementById('btnGeneroMasEscrito');
+let btnAutorLibros = d.getElementById('btnAutorLibros');
+let btnLibrosViejos = d.getElementById('btnLibrosViejos');
+let btnLibrosGenero = d.getElementById('btnLibrosGenero');
+let btnModerno = d.getElementById('btnModerno');
+let btnAntiguo = d.getElementById('btnAntiguo');
+let btnGeneroMasEscrito = d.getElementById('btnGeneroMasEscrito');
+let btnNuevoLibro = d.getElementById('btnNuevoLibro');
+
+const nuevoLibro = () => {
+  let nvoTitulo = d.getElementById('titulo');
+  nvoTitulo = nvoTitulo.value;
+  let nvoAutor = d.getElementById('autor');
+  nvoAutor = nvoAutor.value;
+  let nvoGenero = d.getElementById('genero');
+  nvoGenero = nvoGenero.value;
+  let nvoAnio = d.getElementById('anio');
+  nvoAnio = nvoAnio.value;
+  let Libro = {
+    titulo: nvoTitulo,
+    autor: nvoAutor,
+    genero: nvoGenero,
+    año: nvoAnio,
+  };
+
+  console.log(Libro);
+  listaDeLibros.push(Libro);
+  cargarLibros();
+};
+btnNuevoLibro.addEventListener('click', nuevoLibro);
 
 const autorLibros = () => {
   alert('puto el que lee');
